@@ -28,7 +28,7 @@
                 </div>
 
                 <!-- Phone -->
-                <div class="input-group">
+                {{-- <div class="input-group">
                     <label for="phone">Phone</label>
                     <input type="text" placeholder="Phone" id="phone" class="form-control"
                         name="phone" required autofocus>
@@ -45,7 +45,7 @@
                     @if ($errors->has('address'))
                     <span class="text-danger">{{ $errors->first('address') }}</span>
                     @endif
-                </div>
+                </div> --}}
 
                 <div class="input-group">
                     <label for="email">Email</label>
