@@ -9,7 +9,7 @@
 <body>
 <nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #e3f2fd;">
     <div class="container">
-        <a class="navbar-brand mr-auto" href="#">Laravel Training</a>
+        <a class="navbar-brand mr-auto" href="#">Laravel Web</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -21,7 +21,7 @@
                         <a class="nav-link" href="{{ route('login') }}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('user.createUser') }}">Create user</a>
+                        <a class="nav-link" href="{{ route('user.createUser') }}">Register</a>
                     </li>
                 @else
                     <li class="nav-item">
