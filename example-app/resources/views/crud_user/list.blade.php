@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danh sách người dùng</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 </head>
 
 <body>
@@ -22,8 +23,7 @@
                         <th>ID</th>
                         <th>Username</th>
                         <th>Email</th>
-                        <th>Phone</th>
-                        <th>Address</th>
+                        <th>Role</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -33,8 +33,13 @@
                         <th>{{ $user->id }}</th>
                         <th>{{ $user->name }}</th>
                         <th>{{ $user->email }}</th>
-                        <th>{{ $user->phone }}</th>
-                        <th>{{ $user->address }}</th>
+                        <th>
+                            @foreach($user->roles as $role)
+                                <a href="{{ route('user.role', ['id' => $role->id]) }}">
+                                    {{ $role->name . '-' }}
+                                </a>
+                            @endforeach
+                        </th>
                         <th>
                             <a href="{{ route('user.readUser', ['id' => $user->id]) }}">View</a> |
                             <a href="{{ route('user.updateUser', ['id' => $user->id]) }}">Edit</a> |
@@ -45,6 +50,7 @@
                 </tbody>
             </table>
         </div>
+                {!! $users->withQueryString()->links('pagination::bootstrap-5') !!}
         <div class="footer">
         </div>
     </div>
